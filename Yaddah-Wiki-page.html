@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Democratic Republic of Yaddah - YaddahWiki - The Democratic Republic of Yaddah</title>
+    <link rel="icon" href="Yaddah-Pictures/yaddah_favicon.png" type="image/png">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            font-family: sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            white-space: nowrap; /* Prevent wrapping of links */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            margin-right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        /* Main Article Section */
+        .article {
+            flex-grow: 1;
+            background-color: white;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        /* Main Article Section */
+
+        /* Headings */
+        .article h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden; /* Prevent the line from overflowing */
+        }
+
+        .article h2::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #aaa;
+            margin-top: 3px;
+            clear: both;
+        }
+
+        .article h3 {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden; /* Prevent the line from overflowing */
+        }
+
+        .article h3::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #aaa;
+            margin-top: 3px;
+            clear: both;
+        }
+
+        .article ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Infobox */
+        .infobox {
+            border: 1px solid #aaa;
+            margin: 20px 0 0px 20px;
+            float: right;
+            width: 300px;
+            background-color: #f9f9f9;
+            font-size: 0.85rem;
+        }
+
+        .infobox th, .infobox td {
+            border-bottom: 1px solid #aaa;
+            padding: 5px 10px;
+        }
+
+        .infobox th {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .infobox td {
+            border-bottom: 1px solid #aaa;
+        }
+
+        .infobox tr:last-child td {
+            border-bottom: none;
+        }
+
+        .infobox img {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: 90%;
+        }
+
+        .infobox-caption {
+            text-align: center;
+            font-weight: normal;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail {
+            margin: 20px auto;
+            width: fit-content;
+            max-width: 300px;
+            margin: 20px 0 0px 20px;
+            float: right;
+        }
+
+        .thumbnail-border {
+            border: 1px solid #c8ccd1;
+            padding: 4px;
+            background-color: #f0f0f0;
+            display: inline-block;
+        }
+
+        .thumbnail-border img {
+            display: block;
+            max-width: 100%;
+            border: 1px solid #c8ccd1;
+            background-color: #f8f9fa;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            margin: 10px 5px 0 5px;
+            text-align: center;
+            color: #555555;
+            font-style: italic;
+        }
+
+        /* Text Content */
+        .flag-caption {
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Link Styles */
+        a {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Stack sidebar and main content vertically on smaller screens */
+            .main-content {
+                flex-direction: column;
+            }
+
+            /* Center the infobox and make it full-width on smaller screens */
+            .infobox {
+                float: none;
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            /* Adjust navigation links for better fit */
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9rem;
+            }
+
+            /* Reduce font sizes for smaller screens */
+            .article h2 {
+                font-size: 1.8rem;
+            }
+
+            .article h3 {
+                font-size: 1.3rem;
+            }
+
+            .article p {
+                font-size: 1rem;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Adjust text and layout for mobile devices */
+            body {
+                font-size: 14px;
+            }
+
+            .article h2 {
+                font-size: 1.6rem;
+            }
+
+            .article h3 {
+                font-size: 1.2rem;
+            }
+
+            .sidebar h3 {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#history">History</a>
+        <a href="#government">Government</a>
+        <a href="#culture">Culture</a>
+        <a href="#economy">Economy</a>
+        <a href="#military">Military</a>
+        <a href="#foreign-relations">Foreign Relations</a>
+        <a href="#science-and-technology">Science and Technology</a>
+        <a href="#education">Education</a>
+        <a href="#arts-and-literature">Arts and Literature</a>
+        <a href="#external-links">External Links</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+
+        <!-- Article Section -->
+        <article class="article">
+
+            <!-- Infobox -->
+            <table class="infobox">
+                <tr>
+                    <th colspan="2" style="text-align: center; border-bottom: none; padding-bottom: 0;">Democratic Republic of Yaddah</th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: center;">הָרֶפּוּבְּלִיקָה הַדֵּמוֹקְרָטִית שֶׁל יָאדַה</th>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <img src="Yaddah-Pictures/Republic_of_yaddah_flag.png" alt="Flag of Yaddah">
+                        <div class="flag-caption">Flag of the Democratic Republic of Yaddah</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Capital</th>
+                    <td>Gedera</td>
+                </tr>
+                <tr>
+                    <th>Founded</th>
+                    <td>April 5, 2023</td>
+                </tr>
+                <tr>
+                    <th>Founder</th>
+                    <td>Itay Dayan</td>
+                </tr>
+                <tr>
+                    <th>Government</th>
+                    <td><a href="https://en.wikipedia.org/wiki/Democratic_republic">Democratic Republic</a></td>
+                </tr>
+                <tr>
+                    <th style="border-bottom: none;">Official Language</th>
+                    <td style="border-bottom: none;"><a href="https://en.wikipedia.org/wiki/Hebrew">Hebrew</a></td>
+                </tr>
+            </table>
+
+            <!-- Article content starts here -->
+<section id="introduction">
+    <h2>Democratic Republic of Yaddah</h2>
+    <p>The <strong>Democratic Republic of Yaddah</strong> (<a href="https://en.wikipedia.org/wiki/Hebrew">hebrew</a>: הָרֶפּוּבְּלִיקָה הַדֵּמוֹקְרָטִית שֶׁל יָאדַה, <a href="https://en.wikipedia.org/wiki/Romanization_of_Hebrew">romanized</a> <i>Hā-Rĕpūblīqā hā-Dēmōqrātīt šel Yāddāh</i>) is a self-proclaimed <a href="https://en.wikipedia.org/wiki/Micronation">micronation</a> located in <a href="https://en.wikipedia.org/wiki/Gedera">Gedera</a>, <a href="https://en.wikipedia.org/wiki/Israel">Israel</a>. It was founded on April 5, 2023, by <a href="https://en.wikipedia.org/wiki/Itay_Dayan">Itay Dayan</a> with the goal of creating a society that emphasizes <a href="https://en.wikipedia.org/wiki/Democracy">democratic</a> principles, <a href="https://en.wikipedia.org/wiki/Jewish_culture">Jewish cultural heritage</a>, and <a href="https://en.wikipedia.org/wiki/Transparency_(behavior)">transparency</a> in governance. Yaddah serves as a peaceful symbol for promoting <a href="https://en.wikipedia.org/wiki/Democratic_values">democratic values</a> while preserving the <a href="https://en.wikipedia.org/wiki/Cultural_identity">cultural identity</a> of the <a href="https://en.wikipedia.org/wiki/Jewish_people">Jewish people</a>.</p>
+</section>
+         
+<!-- History Section -->
+<section id="history">
+    <h2>History</h2>
+    <p>Yaddah was founded on April 5, 2023, by <a href="https://en.wikipedia.org/wiki/Itay_Dayan">Itay Dayan</a> in response to local concerns about the preservation of <a href="https://en.wikipedia.org/wiki/Democratic_values">democratic values</a> and <a href="https://en.wikipedia.org/wiki/Jewish_culture">Jewish culture</a>. The first elections in Yaddah were marred by irregularities, leading to a <a href="https://en.wikipedia.org/wiki/Re-election">re-election</a>. These early challenges have shaped the nation's commitment to <a href="https://en.wikipedia.org/wiki/Electoral_integrity">electoral integrity</a> and <a href="https://en.wikipedia.org/wiki/Transparency_(behavior)">transparency</a>. In 2024, Yaddah's first legitimate democratic election took place, which was hailed as a milestone in the country's political development.</p>
+</section>
+
+<!-- Government Section -->
+<section id="government">
+    <h2>Government</h2>
+    <p>Yaddah operates as a <a href="https://en.wikipedia.org/wiki/Democratic_republic">democratic republic</a>, with a government structure that includes an elected <a href="https://en.wikipedia.org/wiki/President">president</a>, a <a href="https://en.wikipedia.org/wiki/Parliament">parliamentary assembly</a>, and an independent <a href="https://en.wikipedia.org/wiki/Judiciary">judiciary</a>. The president is elected every four years by popular vote and holds <a href="https://en.wikipedia.org/wiki/Executive_power">executive powers</a>. The parliament, known as the Yaddah Assembly, is composed of representatives elected by the citizens of Yaddah, with legislative powers to pass laws and approve budgets. The judiciary is independent, ensuring that the <a href="https://en.wikipedia.org/wiki/Rule_of_law">rule of law</a> is upheld in all circumstances.</p>
+    <p>The government's focus is on ensuring <a href="https://en.wikipedia.org/wiki/Freedom_of_speech">freedom of speech</a>, <a href="https://en.wikipedia.org/wiki/Religious_freedom">religion</a>, and <a href="https://en.wikipedia.org/wiki/Education">education</a> while fostering a national identity that aligns with the principles of democracy and Jewish cultural values.</p>
+</section>
+
+<!-- Culture Section -->
+<section id="culture">
+    <h2>Culture</h2>
+    <p>The culture of Yaddah is rooted in <a href="https://en.wikipedia.org/wiki/Jewish_traditions">Jewish traditions</a>, with a strong emphasis on religious and cultural practices. The country celebrates various Jewish holidays, including <a href="https://en.wikipedia.org/wiki/Passover">Passover</a>, <a href="https://en.wikipedia.org/wiki/Rosh_Hashanah">Rosh Hashanah</a>, and <a href="https://en.wikipedia.org/wiki/Hanukkah">Hanukkah</a>, alongside national holidays marking significant historical events in the nation's establishment. Festivals, music, literature, and art form an integral part of life in Yaddah, contributing to the nation's unique cultural landscape.</p>
+</section>
+
+<div class="thumbnail">
+    <div class="thumbnail-border">
+        <img src="Yaddah-Pictures/city.jpg" alt="A view of a city in Yaddah">
+        <div class="image-caption">A view of a city in Yaddah, highlighting its unique architecture.</div>
+    </div>
+</div>
+
+<!-- Economy Section -->
+<section id="economy">
+    <h2>Economy</h2>
+    <p>Yaddah's economy is primarily based on <a href="https://en.wikipedia.org/wiki/Agriculture">agriculture</a>, <a href="https://en.wikipedia.org/wiki/Technology">technology</a>, and <a href="https://en.wikipedia.org/wiki/Tourism">tourism</a>. The country boasts fertile land in the Gedera region, which supports local farming activities, including the cultivation of <a href="https://en.wikipedia.org/wiki/Fruit">fruits</a>, <a href="https://en.wikipedia.org/wiki/Vegetable">vegetables</a>, and <a href="https://en.wikipedia.org/wiki/Olive">olive trees</a>. In recent years, there has been a growing emphasis on <a href="https://en.wikipedia.org/wiki/Technological_innovation">technological innovation</a>, with the government investing in <a href="https://en.wikipedia.org/wiki/Startup_incubator">start-up incubators</a> and <a href="https://en.wikipedia.org/wiki/Renewable_energy">renewable energy</a> initiatives to position Yaddah as a leader in sustainable technology.</p>
+    <p>Tourism also plays a significant role in the economy, with visitors coming to explore Yaddah's <a href="https://en.wikipedia.org/wiki/Cultural_heritage">cultural heritage</a> sites and experience the unique blend of democratic governance and Jewish tradition.</p>
+</section>
+
+<!-- Military Section -->
+<section id="military">
+    <h2>Military</h2>
+    <p>Yaddah maintains a small, defensive military force, primarily focused on protecting its borders and maintaining internal stability. The military is composed of volunteers and is organized into a <a href="https://en.wikipedia.org/wiki/National_guard">national guard</a>, with a mission to defend the sovereignty of the country and uphold the <a href="https://en.wikipedia.org/wiki/Democratic_values">democratic values</a> on which it was founded. Military service is not mandatory, though all citizens are encouraged to participate in national defense if necessary.</p>
+</section>
+
+<!-- Foreign Relations Section -->
+<section id="foreign-relations">
+    <h2>Foreign Relations</h2>
+    <p>Yaddah is currently not recognized by any other sovereign state, but it maintains informal diplomatic ties with several countries. The nation's foreign policy is centered around promoting <a href="https://en.wikipedia.org/wiki/Peace">peace</a>, <a href="https://en.wikipedia.org/wiki/Democracy">democracy</a>, and <a href="https://en.wikipedia.org/wiki/Cultural_exchange">Jewish cultural exchange</a>. Yaddah is committed to fostering relationships with like-minded entities and communities worldwide.</p>
+</section>
+
+<!-- Science and Technology Section -->
+<section id="science-and-technology">
+    <h2>Science and Technology</h2>
+    <p>Yaddah places a strong emphasis on scientific research and technological innovation. The government has established partnerships with several academic institutions and research centers to advance areas such as <a href="https://en.wikipedia.org/wiki/Agriculture">agriculture</a>, <a href="https://en.wikipedia.org/wiki/Renewable_energy">renewable energy</a>, and <a href="https://en.wikipedia.org/wiki/Information_technology">information technology</a>. The country is rapidly becoming a hub for <a href="https://en.wikipedia.org/wiki/Green_technology">green technology</a> and sustainable development.</p>
+</section>
+
+<!-- Education Section -->
+<section id="education">
+    <h2>Education</h2>
+    <p>Education in Yaddah is free and mandatory for children up to the age of 18. The curriculum includes a blend of academic subjects, including <a href="https://en.wikipedia.org/wiki/Mathematics">mathematics</a>, <a href="https://en.wikipedia.org/wiki/Science">science</a>, <a href="https://en.wikipedia.org/wiki/Literature">literature</a>, and <a href="https://en.wikipedia.org/wiki/History">history</a>, alongside courses in <a href="https://en.wikipedia.org/wiki/Jewish_culture">Jewish culture</a>, <a href="https://en.wikipedia.org/wiki/Religious_studies">religious studies</a>, and <a href="https://en.wikipedia.org/wiki/Citizenship_education">citizenship</a>. The government prioritizes the development of a well-rounded education system that equips citizens with the knowledge and skills needed to participate actively in society.</p>
+</section>
+
+<!-- Arts and Literature Section -->
+<section id="arts-and-literature">
+    <h2>Arts and Literature</h2>
+    <p>Yaddah has a vibrant arts scene, with a growing number of artists, writers, and performers. Literature in Yaddah is predominantly written in <a href="https://en.wikipedia.org/wiki/Hebrew_language">Hebrew</a>, with a strong tradition of storytelling and poetry that reflects the nation's history, struggles, and hopes for the future. The arts play a crucial role in shaping Yaddah's national identity, with government-funded initiatives supporting artists and cultural projects.</p>
+</section>
+
+<!-- External Links Section -->
+<section id="external-links">
+    <h2>External Links</h2>
+    <ul>
+        <li><a href="https://micronations.wiki/index.php?title=Draft:Republic_Of_Yaddah">Yaddah - MicroWiki</a></li>
+        <li><a href="file:///C:/dev/Yaddah-Website/Yaddah.html">Official Website of the Democratic Republic of Yaddah</a></li>
+    </ul>
+</section>
+
+</article>
+</div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 The Democratic Republic of Yaddah. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

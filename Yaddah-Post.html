@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaddah Post</title>
+    <link rel="icon" href="Yaddah-Pictures/yaddah_favicon.png" type="image/png">
+    <style>
+        /* General page styles */
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, #003366, #0066cc); /* Gradient for the header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+
+        header .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        header .date-time {
+            font-size: 1rem;
+        }
+
+        header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        header .search-bar input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 5px;
+            font-size: 1rem;
+        }
+
+        header .search-bar button {
+            padding: 5px 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        header .search-bar button:hover {
+            background-color: #004a99;
+        }
+
+        /* Moving text section */
+        .news-ticker {
+            overflow: hidden;
+            white-space: nowrap;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .news-ticker ul {
+            display: inline-block;
+            padding-left: 100%;
+            animation: move 30s linear infinite;
+        }
+
+        .news-ticker li {
+            display: inline-block;
+            padding-right: 30px;
+            font-size: 1.2rem;
+        }
+
+        .news-ticker span {
+            padding: 0 10px;
+            color: white; /* White dots */
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #003366;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #004a99;
+            text-decoration: underline;
+        }
+
+        /* Container for the main content */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0px 0px 40px;
+            width: 80%;
+        }
+
+        .wrap-container {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .news-sidebar {
+            width: 10%;
+            background-color: #f8f9fa;
+            border: 1.5px solid #ddd;
+            padding: 10px;
+            overflow-y: auto;
+            height: 100%;
+            margin-top: 40px;
+            margin-left: 0;
+        }
+
+        /* News Box Styles */
+        .news-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .news-box h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .news-box p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .news-box img {
+            width: 100%;
+            height: auto;
+            padding-top: 10px;
+            border-radius: 8px;
+        }
+
+        .news-box a {
+            color: #3366cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news-box a:hover {
+            text-decoration: underline;
+        }
+        
+                /* Interactive section */
+                .interact-section {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .interact-section h2 {
+            font-size: 24px;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .interact-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .interact-section input,
+        .interact-section textarea,
+        .interact-section button {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .interact-section button {
+            background-color: #0066cc;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .interact-section button:hover {
+            background-color: #004a99;
+        }
+
+        .news-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+
+        .news-item h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #007bff;
+        }
+
+        .news-item p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .news-item span {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .news-item:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0; /* Reduced height */
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive layout */
+        @media (max-width: 775px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .news-box {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="date-time" id="date-time">Loading...</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+        </div>
+        <h1>Yaddah Post</h1>
+        <div class="news-ticker">
+            <ul>
+                <li>Breaking News: Yaddah's New Trade Agreement Signed <span>•</span></li>
+                <li>Yaddah Hosts Global Diplomacy Summit Next Month <span>•</span></li>
+                <li>Infrastructure Developments Across Yaddah Begin <span>•</span></li>
+                <li>Education Reform Bill Passes in Yaddah Parliament <span>•</span></li>
+                <li>New Technology Hub Announced in Yaddah <span>•</span></li>
+                <li>National Sports Teams Celebrate Big Victories <span>•</span></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">National News</a>
+        <a href="#">Politics</a>
+        <a href="#">Economy</a>
+        <a href="#">Culture</a>
+        <a href="#">Contact</a>
+    </nav>
+  <div class="wrap-container">
+    <!-- Main content section -->
+    <div class="container">
+        <!-- News Article 1 -->
+        <div class="news-box">
+            <h2>New Infrastructure Projects in Yaddah</h2>
+            <img src="https://via.placeholder.com/800x400" alt="Infrastructure News">
+            <p>The government of Yaddah has announced several new infrastructure projects aimed at improving national transportation networks. These projects include the expansion of highways, the development of high-speed rail systems, and the modernization of airports. These projects are expected to create thousands of jobs and improve connectivity throughout the country. With increasing urbanization and population growth, efficient infrastructure is seen as a critical factor for sustaining Yaddah's economic growth.</p>
+            <p>The government has allocated billions of dollars for these initiatives, with the first phase focusing on urban centers in the north and south of the country. The president of Yaddah emphasized that these infrastructure upgrades will not only support economic growth but also improve the quality of life for citizens by reducing travel times and increasing access to services.</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <!-- News Article 2 -->
+        <div class="news-box">
+            <h2>Yaddah's Trade Expansion Efforts</h2>
+            <img src="https://via.placeholder.com/800x400" alt="Trade News">
+            <p>Yaddah's President announced a new trade agreement with neighboring nations aimed at boosting exports and enhancing diplomatic relations. The deal is set to open new markets for Yaddah's agricultural, manufacturing, and technology sectors. The agreement, which was signed this week, aims to reduce tariffs, improve border logistics, and increase cross-border investments.</p>
+            <p>As part of the deal, Yaddah will also participate in a regional economic bloc, allowing for easier access to markets in neighboring countries. This agreement marks a significant shift in Yaddah's foreign policy, with the country moving towards greater economic integration within the region. Experts predict that the deal will have a positive impact on Yaddah's GDP, potentially boosting it by 4% over the next five years.</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <!-- News Article 3 -->
+        <div class="news-box">
+            <h2>Education Reforms in Yaddah</h2>
+            <img src="https://via.placeholder.com/800x400" alt="Education News">
+            <p>The Ministry of Education has unveiled a comprehensive set of reforms aimed at improving the quality of education in Yaddah. The new policies will focus on modernizing curricula, increasing access to higher education, and enhancing vocational training opportunities. The government has allocated significant funds to support these changes, which are expected to benefit students at all levels of the education system.</p>
+            <p>Under the new reforms, students will be exposed to more diverse subjects, including coding, sustainability studies, and international relations. Additionally, there will be a stronger focus on hands-on learning and practical skills to ensure students are better prepared for the workforce. The reforms are designed to align Yaddah's education system with international standards, making Yaddah a global leader in education and innovation.</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <!-- News Article 4 -->
+        <div class="news-box">
+            <h2>International Relations: Yaddah Hosts Diplomatic Summit</h2>
+            <img src="https://via.placeholder.com/800x400" alt="Diplomacy News">
+            <p>Yaddah is set to host a major diplomatic summit next month, bringing together world leaders to discuss global security, trade, and climate change. The summit will be held in Yaddah's capital city, attracting representatives from over 30 countries. This event is expected to be one of the largest international gatherings to take place in Yaddah's history.</p>
+            <p>The government has already begun preparations for the summit, including the construction of new venues and the security measures required for such a high-profile event. World leaders are expected to address critical issues such as climate change mitigation, sustainable development, and the global economic recovery post-pandemic. Yaddah's leadership views the summit as an opportunity to strengthen its international standing and promote regional cooperation.</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <div class="interact-section">
+            <h2>Have Your Say</h2>
+            <form>
+                <label for="survey">What do you think about Yaddah's recent reforms?</label>
+                <textarea id="survey" rows="4" placeholder="Share your thoughts..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="news-sidebar">
+        <h3>Latest News</h3>
+        <div class="news-item">
+            <h4>Infrastructure Projects Announced</h4>
+            <p>Yaddah reveals plans for new highways and high-speed rail systems.</p>
+            <span>Published: January 9, 2025</span>
+        </div>
+        <div class="news-item">
+            <h4>Trade Agreement Signed</h4>
+            <p>Yaddah enters a new economic bloc to boost exports and relations.</p>
+            <span>Published: January 8, 2025</span>
+        </div>
+        <div class="news-item">
+            <h4>Technology Hub Expansion</h4>
+            <p>The government announces funding for tech startups nationwide.</p>
+            <span>Published: January 7, 2025</span>
+        </div>
+        <div class="news-item">
+            <h4>Educational Reforms</h4>
+            <p>Yaddah invests in modernizing schools and universities.</p>
+            <span>Published: January 6, 2025</span>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Yaddah Post. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Update current date and time in the header
+        const dateTimeElement = document.getElementById('date-time');
+        const updateDateTime = () => {
+            const now = new Date();
+            dateTimeElement.textContent = now.toLocaleString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            });
+        };
+        setInterval(updateDateTime, 1000);
+
+        // Update current year in the footer
+        const yearElement = document.getElementById('year');
+        yearElement.textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

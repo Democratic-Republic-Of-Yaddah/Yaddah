@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Democratic Republic of Yaddah - YaddahWiki - The Democratic Republic of Yaddah</title>
+    <link rel="icon" href="Yaddah-Pictures/yaddah_favicon.png" type="image/png">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            font-family: sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            white-space: nowrap; /* Prevent wrapping of links */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            margin-right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        /* Main Article Section */
+        .article {
+            flex-grow: 1;
+            background-color: white;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        /* Main Article Section */
+
+        /* Headings */
+        .article h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden; /* Prevent the line from overflowing */
+        }
+
+        .article h2::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #aaa;
+            margin-top: 3px;
+            clear: both;
+        }
+
+        .article h3 {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden; /* Prevent the line from overflowing */
+        }
+
+        .article h3::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #aaa;
+            margin-top: 3px;
+            clear: both;
+        }
+
+        .article ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Infobox */
+        .infobox {
+            border: 1px solid #aaa;
+            margin: 20px 0 0px 20px;
+            float: right;
+            width: 300px;
+            background-color: #f9f9f9;
+            font-size: 0.85rem;
+        }
+
+        .infobox th, .infobox td {
+            border-bottom: 1px solid #aaa;
+            padding: 5px 10px;
+        }
+
+        .infobox th {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .infobox td {
+            border-bottom: 1px solid #aaa;
+        }
+
+        .infobox tr:last-child td {
+            border-bottom: none;
+        }
+
+        .infobox img {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: 50%;
+        }
+
+        .infobox-caption {
+            text-align: center;
+            font-weight: normal;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail {
+            margin: 20px auto;
+            width: fit-content;
+            max-width: 300px;
+            margin: 20px 0 0px 20px;
+            float: right;
+        }
+
+        .thumbnail-border {
+            border: 1px solid #c8ccd1;
+            padding: 4px;
+            background-color: #f0f0f0;
+            display: inline-block;
+        }
+
+        .thumbnail-border img {
+            display: block;
+            max-width: 100%;
+            border: 1px solid #c8ccd1;
+            background-color: #f8f9fa;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            margin: 10px 5px 0 5px;
+            text-align: center;
+            color: #555555;
+            font-style: italic;
+        }
+
+        /* Text Content */
+        .flag-caption {
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Link Styles */
+        a {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Stack sidebar and main content vertically on smaller screens */
+            .main-content {
+                flex-direction: column;
+            }
+
+            /* Center the infobox and make it full-width on smaller screens */
+            .infobox {
+                float: none;
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            /* Adjust navigation links for better fit */
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9rem;
+            }
+
+            /* Reduce font sizes for smaller screens */
+            .article h2 {
+                font-size: 1.8rem;
+            }
+
+            .article h3 {
+                font-size: 1.3rem;
+            }
+
+            .article p {
+                font-size: 1rem;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Adjust text and layout for mobile devices */
+            body {
+                font-size: 14px;
+            }
+
+            .article h2 {
+                font-size: 1.6rem;
+            }
+
+            .article h3 {
+                font-size: 1.2rem;
+            }
+
+            .sidebar h3 {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#biography">biography</a>
+        <a href="#Beliefs">Beliefs</a>
+        <a href="#External Links">External Links</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+
+        <!-- Article Section -->
+        <article class="article">
+
+            <!-- Infobox -->
+            <table class="infobox">
+                <tr>
+                    <th colspan="2" style="text-align: center;">Itay Dayan</th>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <img src="Yaddah-Pictures/Male_No_Free_Picture.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Born</th>
+                    <td>10 June 2010 (age 14) <a href="https://en.wikipedia.org/wiki/Ramat_Gan">Ramat Gan</a>, <a href="https://en.wikipedia.org/wiki/Israel">Israel</a></td>
+                </tr>
+                <tr>
+                    <th>Education</th>
+                    <td><a href="https://en.wikipedia.org/wiki/Darka_Begin_High_School">Darka Begin High School</a>, Gedera</td>
+                </tr>
+                <tr>
+                    <th>Occupation</th>
+                    <td><a href="https://en.wikipedia.org/wiki/Micronationalism">Micronationalist</a></td>
+                </tr>
+                <tr>
+                    <th style="border-bottom: none;">Known for</th>
+                    <td style="border-bottom: none;">Founding the <a href="Yaddah-Wiki-page.html">Democratic Republic of Yaddah</a></td>
+                </tr>
+            </table>
+
+            <!-- Article content starts here -->
+<section id="introduction">
+    <h2>Itay Dayan</h2>
+    <p><strong>Itay Dayan</strong> (born 10 June 2010) is a Yaddahan <a href="https://en.wikipedia.org/wiki/Micronationalism">Micronationalist</a>, the founder of the <a href="Yaddah-Wiki-page.html">Democratic Republic of Yaddah</a> and currently serves as its Prime Minister.</p>
+</section>
+         
+<!-- History Section -->
+<section id="biography">
+    <h2>Biography</h2>
+    <p>Itay Dayan was born on June 10, 2010, at the Sheba Medical Center in <a href="https://en.wikipedia.org/wiki/Ramat_Gan">Ramat Gan</a> to Hagar, a former executive at Bank Jerusalem and entrepreneur, and to Ilan, a manager at <a href="https://en.wikipedia.org/wiki/Elbit_Systems">Elbit Systems</a>. At a young age, he moved with his family to live in the heart of Gedera. He was educated at the <a href="https://en.wikipedia.org/wiki/Farg_Kindergarten">Farg Kindergarten</a>, the <a href="https://en.wikipedia.org/wiki/HaBiluyim">"HaBiluyim" elementary school</a>, and the <a href="https://en.wikipedia.org/wiki/Darka_Begin_High_School">"Darka Begin" high school</a> in a science-oriented class. In 9th grade, he transferred to the <a href="https://en.wikipedia.org/wiki/Atid_High_School_for_Science">"Atid" High School for Science</a> in Lod, which is part of the <a href="https://en.wikipedia.org/wiki/Atid">"Atid" educational network</a>.
+        In early 2024, Dayan began working on establishing a micronation. During this time, he developed national symbols such as a flag, emblem, a system of government, and even a political ideology by which the country would operate.</p>
+</section>
+
+<!-- Government Section -->
+<section id="Beliefs">
+    <h2>Beliefs</h2>
+    <p>Itay Dayan, the founder of <a href="https://micronations.wiki/wiki/Draft:Yaddahism">Yaddahism</a>, has shaped his political ideology around a vision that seeks to balance modern liberalism, <a href="https://en.wikipedia.org/wiki/Zionism">Zionism</a>, and <a href="https://en.wikipedia.org/wiki/Capitalism">capitalism</a>, while maintaining state control over key public institutions. His beliefs emphasize a strong, transparent government that plays an active role in regulating the economy and protecting national security. Dayan views Zionism as an essential unifying force for the Jewish people, but he rejects racist or exclusionary views, advocating for a society where citizens, regardless of ethnicity, are treated equally under the law.
+        Dayan is a firm believer in the importance of personal freedoms and equality of rights, which are core principles of modern liberalism. However, he also stresses the need for a strong state apparatus to safeguard the welfare of the population and ensure the stability of society. This balance, according to Dayan, is key to creating a society where both individual rights and collective responsibilities are respected.
+        In terms of economic policy, Dayan supports a capitalist system that encourages private entrepreneurship and market competition. Nevertheless, he advocates for partial regulation to prevent exploitation, ensure economic fairness, and guarantee access to essential goods and services. He believes this approach is necessary to protect citizens from the instability that can arise in a completely free-market economy.
+        Regarding the Israeli-Palestinian conflict, Dayan opposes the two-state solution, advocating instead for a more assertive approach to ensuring Israel’s security. He believes that Israel must maintain control over strategic areas and take aggressive actions to advance its national interests. While his stance is controversial, Dayan argues that this approach is the most effective way to achieve long-term peace and security for the Jewish state.
+        Through these beliefs, Dayan seeks to establish a political system that upholds democratic values, including respect for human rights, the rule of law, and governmental transparency. He views transparency as essential in building trust with the public and preventing corruption within the political system. Ultimately, Dayan’s vision for Yaddahism is one that prioritizes national unity, social equity, and economic prosperity, all while safeguarding Israel's security and sovereignty.</p>
+</section>
+
+<!-- External Links Section -->
+<section id="external-links">
+    <h2>External Links</h2>
+    <ul>
+        <li><a href="https://micronations.wiki/index.php?title=Draft:Itay_Dayan">Itay Dayan - MicroWiki</a></li>
+        <li><a href="file:///C:/dev/Yaddah-Website/Yaddah.html">Official Website of the Democratic Republic of Yaddah</a></li>
+    </ul>
+</section>
+
+</article>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2024 The Democratic Republic of Yaddah. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

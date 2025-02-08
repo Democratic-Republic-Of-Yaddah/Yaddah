@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Democratic Republic of Yaddah - YaddahWiki - The Democratic Republic of Yaddah</title>
+    <link rel="icon" href="Yaddah-Pictures/yaddah_favicon.png" type="image/png">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            font-family: sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            white-space: nowrap; /* Prevent wrapping of links */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+        }
+
+        
+        /* Main Article Section */
+        .article {
+            flex-grow: 1;
+            background-color: white;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        /* Main Article Section */
+
+        /* Headings */
+        .article h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden; /* Prevent the line from overflowing */
+        }
+
+        .article h2::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #aaa;
+            margin-top: 3px;
+            clear: both;
+        }
+
+        .article h3 {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            position: relative;
+            overflow: hidden; /* Prevent the line from overflowing */
+        }
+
+        .article h3::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: #aaa;
+            margin-top: 3px;
+            clear: both;
+        }
+
+        .article ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Infobox */
+        .infobox {
+            border: 1px solid #aaa;
+            margin: 20px 0 0px 20px;
+            float: right;
+            width: 300px;
+            background-color: #f9f9f9;
+            font-size: 0.85rem;
+        }
+
+        .infobox th, .infobox td {
+            padding: 2px 10px;
+        }
+
+        .infobox th {
+            text-align: left;
+            font-weight: bold;
+            vertical-align: top;
+        }
+
+        .infobox tr:last-child td {
+            border-bottom: none;
+        }
+
+        .infobox img {
+            display: block;
+            margin: 0 auto 10px auto;
+            width: 80%;
+        }
+
+        .infobox-caption {
+            text-align: center;
+            font-weight: normal;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #aaa;
+        }
+
+        .thumbnail {
+            margin: 20px auto;
+            width: fit-content;
+            max-width: 300px;
+            margin: 20px 0 0px 20px;
+            float: right;
+        }
+
+        .thumbnail-border {
+            border: 1px solid #c8ccd1;
+            padding: 4px;
+            background-color: #f0f0f0;
+            display: inline-block;
+        }
+
+        .thumbnail-border img {
+            display: block;
+            max-width: 100%;
+            border: 1px solid #c8ccd1;
+            background-color: #f8f9fa;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            margin: 10px 5px 0 5px;
+            text-align: center;
+            color: #555555;
+            font-style: italic;
+        }
+
+        /* Text Content */
+        .flag-caption {
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
+            border-bottom: 1px solid #aaa;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Link Styles */
+        a {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .mini-flag {
+            width: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Stack sidebar and main content vertically on smaller screens */
+            .main-content {
+                flex-direction: column;
+            }
+
+            /* Center the infobox and make it full-width on smaller screens */
+            .infobox {
+                float: none;
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            /* Adjust navigation links for better fit */
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9rem;
+            }
+
+            /* Reduce font sizes for smaller screens */
+            .article h2 {
+                font-size: 1.8rem;
+            }
+
+            .article h3 {
+                font-size: 1.3rem;
+            }
+
+            .article p {
+                font-size: 1rem;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Adjust text and layout for mobile devices */
+            body {
+                font-size: 14px;
+            }
+
+            .article h2 {
+                font-size: 1.6rem;
+            }
+
+            .article h3 {
+                font-size: 1.2rem;
+            }
+
+            .sidebar h3 {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#biography">Operation</a>
+        <a href="#Beliefs">Aftermath</a>
+        <a href="#External Links">External Links</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+
+        <!-- Article Section -->
+        <article class="article">
+
+            <!-- Infobox -->
+            <table class="infobox">
+                <tr>
+                    <th colspan="2" style="text-align: center; background-color: #c3d6ef;">Operation Nisan</th>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <img src="Yaddah-Pictures/pereg_11.jpg">
+                        <div class="flag-caption">Map of the area attacked by the Yaddah forces</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td><a href="https://en.wikipedia.org/wiki/Raid_(military)">Raid</a></td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>Pereg 11, <a href="https://en.wikipedia.org/wiki/Israel">Israel</a></td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td><a href="https://en.wikipedia.org/wiki/April">April</a> <a href="https://en.wikipedia.org/wiki/2024">2024</a></td>
+                </tr>
+                <tr>
+                    <th>Executed by</th>
+                    <td>Yaddah Forces</td>
+                </tr>
+                <tr>
+                    <th style="border-bottom: none;">Outcome</th>
+                    <td style="border-bottom: none;"><a href="Yaddah-Wiki-page.html">Yaddah</a> annexes pereg 11</td>
+                </tr>
+            </table>
+
+            <!-- Article content starts here -->
+            <section id="introduction">
+                <h2>Operation Nisan</h2>
+                <p><strong>Operation Nisan</strong> was a ground raid conducted by <a href="https://en.wikipedia.org/wiki/Micronation" target="_blank">Yaddah forces</a> on the <a href="https://en.wikipedia.org/wiki/Military_complex" target="_blank">Parg 11 complex</a>, a site located near the borders of the <a href="https://en.wikipedia.org/wiki/State_(polity)" target="_blank">Democratic Republic of Yaddah</a>. The operation resulted in the <a href="https://en.wikipedia.org/wiki/Annexation" target="_blank">capture and subsequent annexation</a> of the complex. It was carried out using non-lethal <a href="https://en.wikipedia.org/wiki/Toy_weapon" target="_blank">toy weaponry</a>, marking a unique approach to military action.</p>
+            </section>
+                     
+            <!-- History Section -->
+            <section id="biography">
+                <h2>Background</h2>
+                <p>The raid followed Yaddah’s acquisition of a stockpile of <a href="https://en.wikipedia.org/wiki/Nerf_gun" target="_blank">toy weapons</a>, which the leadership identified as an opportunity to expand their <a href="https://en.wikipedia.org/wiki/Territorial_dispute" target="_blank">territorial control</a>. The <a href="https://en.wikipedia.org/wiki/Military_installation" target="_blank">Parg 11 complex</a>, located in proximity to Yaddah’s borders, was deemed a suitable target due to its accessibility. Before the operation, Yaddah’s leaders convened a <a href="https://en.wikipedia.org/wiki/Military_council" target="_blank">military assembly</a> to discuss the planned raid, establishing a strategy for conducting future <a href="https://en.wikipedia.org/wiki/Military_operation" target="_blank">operations</a>.</p>
+            </section>
+            
+            <section id="biography">
+                <h2>Operation</h2>
+                <p>The raid involved three Yaddah soldiers using <a href="https://en.wikipedia.org/wiki/Airsoft_gun" target="_blank">Soft Bullet Gun Toy 24</a>, <a href="https://en.wikipedia.org/wiki/Wembley" target="_blank">Wembley Soft Bullet Blaster</a>, and <a href="https://en.wikipedia.org/wiki/Nerf" target="_blank">Werfer Alpha Strike</a>. The forces entered through the <a href="https://en.wikipedia.org/wiki/Flanking_maneuver" target="_blank">southeastern gate</a>, with one soldier flanking through the eastern corridor to secure the <a href="https://en.wikipedia.org/wiki/Courtyard" target="_blank">western courtyard</a>. The remaining two soldiers cleared the <a href="https://en.wikipedia.org/wiki/Main_courtyard" target="_blank">main courtyard</a> before breaching the building and systematically clearing rooms on the lower floor. <a href="https://en.wikipedia.org/wiki/Warning_shot" target="_blank">Warning shots</a> were fired using toy weapons, and a sniper provided cover, targeting potential hiding spots.</p>
+            </section>
+            
+            <!-- Government Section -->
+            <section id="Beliefs">
+                <h2>Aftermath</h2>
+                <p>Upon securing the complex, Yaddah forces declared the <a href="https://en.wikipedia.org/wiki/Annexation" target="_blank">annexation</a> of Parg 11 into the <a href="https://en.wikipedia.org/wiki/Republic" target="_blank">Democratic Republic of Yaddah</a>. The annexation has not been <a href="https://en.wikipedia.org/wiki/International_recognition" target="_blank">recognized</a> by any internationally established <a href="https://en.wikipedia.org/wiki/Sovereign_state" target="_blank">sovereign state</a>, leaving its legal status unresolved. Both Yaddah and <a href="https://en.wikipedia.org/wiki/Israel" target="_blank">Israeli</a> sources confirmed that no injuries or casualties occurred during the operation, as only non-lethal toy weapons were employed.
+                </p>
+            </section>
+            
+            <!-- External Links Section -->
+            <section id="external-links">
+                <h2>External Links</h2>
+                <ul>
+                    <li><a href="https://micronations.wiki/index.php?title=Draft:Operation_Nisan" target="_blank">Operation Nisan - MicroWiki</a></li>
+                    <li><a href="file:///C:/dev/Yaddah-Website/Yaddah.html">Official Website of the Democratic Republic of Yaddah</a></li>
+                </ul>
+            </section>            
+
+</article>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2024 The Democratic Republic of Yaddah. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

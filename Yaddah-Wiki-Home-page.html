@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaddahWiki - Homepage</title>
+    <style>
+        /* General page styles */
+        body {
+            background-color: white; /* White background */
+            color: #333; /* Dark gray text */
+            line-height: 1.6; /* Improved line height for readability */
+            font-family: sans-serif; /* Sans-serif font */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #003366; /* Dark blue background for the navbar */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white; /* Navbar links color */
+            text-decoration: none; /* No underlines */
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold; /* Making navbar text bold */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Current date on the left */
+        .current-date {
+            font-size: 20px;
+            color: #003366;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-weight: bold;
+        }
+
+        /* Container for the content boxes */
+        .container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap into rows */
+    gap: 20px;
+    justify-content: center; /* Centers the content horizontally */
+    margin: 20px auto; /* Center the container itself */
+    width: 90%;
+}
+
+
+        /* Box styles */
+        .box {
+    background-color: white;
+    border: 2px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: flex-start; /* Align content at the top */
+    width: 45%;
+}
+
+.box div {
+    flex-grow: 1; /* Allow the text to take up remaining space */
+}
+
+.box img {
+    width: 200px; /* Fixed image width */
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 55px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+        /* Top border with blue shades */
+        .box:nth-child(1) {
+            border-top: 6px solid #003366; /* Dark blue */
+        }
+
+        .box:nth-child(2) {
+            border-top: 6px solid #004c99; /* Medium blue */
+        }
+
+        .box:nth-child(3) {
+            border-top: 6px solid #0066cc; /* Light blue */
+        }
+
+        .box:nth-child(4) {
+            border-top: 6px solid #0077e6; /* Sky blue */
+        }
+
+        .box:nth-child(5) {
+            border-top: 6px solid #3399ff; /* Light sky blue */
+        }
+
+        .box:nth-child(6) {
+            border-top: 6px solid #66b3ff; /* Very light blue */
+        }
+
+        /* Text inside boxes */
+        .box h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .box p {
+            font-size: 16px;
+        }
+
+        /* Welcome box styles */
+        .welcome-box {
+            background-color: #f9f9f9;
+            color: black;
+            border: 1px solid #dddddd; /* Border around the box */
+            text-align: center;
+            padding: 30px;
+            font-size: 20px;
+            margin: 20px auto;
+            width: 90%; /* Makes the box stretch across most of the screen */
+        }
+
+        .welcome-box span {
+            font-size: 22px;
+        }
+
+        .welcome-box a {
+            color: #3366cc; /* Links color */
+            text-decoration: none; /* No underlines */
+        }
+
+        .welcome-box p {
+    margin: 0; /* Remove the default margin */
+    padding: 5px 0 0 0; /* Ensure there's no padding */
+    line-height: 1.3; /* Adjust this value to your preference */
+    font-size: 14px;
+}
+
+
+        /* Responsive layout */
+        @media (max-width: 775px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .box {
+                width: 80%;
+            }
+
+            .welcome-box {
+                width: 85%;
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Links inside content boxes */
+        .box a {
+            color: #3366cc; /* Links color */
+            text-decoration: none; /* Remove underlines from links in boxes */
+        }
+
+        .box a:hover {
+            text-decoration: underline; /* Add underline on hover for better UX */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Featured Articles</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Welcome Box -->
+    <div class="welcome-box">
+        <span>Welcome to <a href="YaddahWiki-Wiki-page.html">YaddahWiki</a>,</span>
+        <p>Your encyclopedia for all things about Yaddah.<br> Explore its culture, history, and current events.</p>
+    </div>
+
+    <!-- Main content section -->
+    <div class="container">
+        <!-- Featured Article Box -->
+        <div class="box">
+            <div>
+                <h2>Featured Article</h2>
+                <p>The <a href="Yaddah-Wiki-page.html" target="_blank"><strong>Democratic Republic of Yaddah</strong></a> is a self-proclaimed micronation located in Gedera, Israel. It was founded on April 5, 2023, by Itay Dayan with the goal of creating a society that emphasizes democratic principles, Jewish cultural heritage, and transparency in governance. Yaddah serves as a peaceful symbol for promoting democratic values while preserving the cultural identity of the Jewish people.</p>
+            </div>
+            <img src="Yaddah-Pictures/Republic_of_yaddah_flag.png" alt="Flag of Yaddah">
+        </div>
+
+        <!-- Did You Know? Box -->
+        <div class="box">
+            <div>
+                <h2>Did You Know?</h2>
+                <p><a href="Yaddahism-Wiki-page.html"><strong>Yaddahism</strong></a> is a political ideology developed by Itay Dayan from Israel. The ideology advocates for a combination of modern liberal principles, Zionism, and capitalism, while maintaining key public institutions under state ownership and partial regulation of certain products. Yaddahism views Zionism as a unifying factor but does not include racist views toward other population groups. It opposes the two-state solution to the Israeli-Palestinian conflict, believing that more aggressive actions are the way to advance security and national goals.</p>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="Did You Know Image">
+        </div>
+
+        <!-- On This Month Box -->
+        <div class="box">
+            <div>
+                <h2>On This Month</h2>
+                <ul>
+                    <li><strong>November 1st</strong>: The founding of the Yaddah capitalist Party.</li>
+                    <li><strong>November 5th</strong>: Teacher day is celebrated in Yaddah.</li>
+                    <li><strong>November 15th</strong>: Yaddah hosts its first international arts festival.</li>
+                    <li><strong>November 20th</strong>: Yaddah’s first satellite is launched into space.</li>
+                    <li><strong>November 30th</strong>: National unity celebrations held across Yaddah.</li>
+                </ul>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="On This Month Image">
+        </div>
+
+        <!-- Featured Picture Box -->
+        <div class="box">
+            <div>
+                <h2>Featured Picture</h2>
+                <p>Explore the breathtaking landscapes of Yaddah’s mountains, forests, and coastal areas. This picture captures the beauty of the nation's diverse geography.</p>
+            </div>
+            <img src="Yaddah-Pictures/city.jpg" alt="Featured Picture">
+        </div>
+
+        <!-- In the News Box -->
+        <div class="box">
+            <div>
+                <h2>In the News</h2>
+                <ul>
+                    <li>Yaddah signs a historic trade agreement with neighboring countries.</li>
+                    <li>The President of Yaddah announces major reforms in education.</li>
+                    <li>A new technology hub is established in the capital.</li>
+                    <li>Yaddah opens its first national park to international visitors.</li>
+                    <li>New infrastructure projects are launched to improve transportation.</li>
+                </ul>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="In the News Image">
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 The Democratic Republic of Yaddah. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
